@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch2Gether Room</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="search-results.css">
+    <script src="movie.css"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Binge Verse</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#trending">Trending</a></li>
+                <li class="dropdown">
+                    <a href="#">Shows</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="anime.html">Anime</a></li>
+                        <li><a href="webseries.html">Webseries</a></li>
+                        <li><a href="movies.html">Movies</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">My List</a></li>
+                <li><a href="#">Watchparty</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search-button">Search</button>
+            <ul id="search-results" class="search-results"></ul> <!-- Search results list -->
+        </div>        
+        <div class="profile-container">
+            <a href="profile.html" class="profile-link">
+                <img src="./images/profile-icon.png" alt="Profile Icon" class="profile-icon">
+            </a>
+        </div>
+    </header>
+    <main>
+        <section class="watch2gether-container">
+            <h1>Watch2Gether Room</h1>
+            <iframe src="https://www.watch2gether.com/room/new" title="Watch2Gether Room" class="watch2gether-frame"></iframe>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Binge Verse. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,215 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+    height: 100%;
+}
+
+header {
+    background: #111;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #9b59b6; /* Increased border thickness */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #9b59b6;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0; /* Border under navigation */
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background: #9b59b6; /* Purple background on hover */
+    color: #111;
+    border-radius: 5px;
+}
+
+.video-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    color: #fff;
+    height: 700px;
+}
+
+.video-container {
+    width: 83%; /* Set to 80% of viewport width */
+    max-width: 1200px; /* Max width for larger screens */
+    background: #333;
+    overflow: hidden;
+    height: 1600px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-details {
+    text-align: center; /* Add space above the video details */
+    padding: 20px; /* Add padding for better readability */
+    background: #222; /* Slightly different background for better contrast */
+    width: 80%; /* Set width to match video container */
+    max-width: 1200px; /* Match max width with video container */
+    height: 1500px;
+}
+
+.video-details h2 {
+    font-size: 28px; /* Slightly larger font size */
+    margin-bottom: 20px;
+}
+
+.video-details p {
+    font-size: 18px; /* Slightly larger font size */
+    line-height: 1.6; /* Increased line height for readability */
+}
+
+footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-top: 3px solid #9b59b6; /* Increased border thickness */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+.download-button {
+    display: inline-block;
+    margin-top: 20px; /* Space above the button */
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #9b59b6;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #8e44ad; /* Darker purple on hover */
+    color: #fff;
+}
+nav {
+    background: #111; /* Dark background */
+    padding: 10px 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    position: relative; /* Needed for positioning dropdown */
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  nav ul li a:hover,
+  nav ul li a:focus {
+    background: #9b59b6; /* Purple background */
+    color: #111;
+    outline: none;
+  }
+  
+  /* Dropdown Menu Styling */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute; /* Positioned relative to the parent */
+    top: 100%; /* Aligns dropdown below the parent */
+    left: 0;
+    background: #222; /* Slightly lighter background */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensure dropdown appears above other elements */
+  }
+  
+  .dropdown-menu li {
+    margin: 0;
+  }
+  
+  .dropdown-menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: background 0.3s;
+  }
+  
+  .dropdown-menu a:hover {
+    background: #9b59b6; /* Purple background on hover */
+    color: #111;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    nav ul li {
+        margin: 5px 0;
+    }
+  
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+    }
+  }
+  /* Watchparty Link Styling */
+  nav ul li a[href="#watchparty"] {
+    background: #2c3e50; /* Darker background for Watchparty */
+    color: #fff;
+    border: 2px solid #3498db; /* Blue border */
+  }
+  
+  nav ul li a[href="#watchparty"]:hover {
+    background: #3498db; /* Blue background on hover */
+    color: #fff;
+  }

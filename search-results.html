@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="search-results.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="movie.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Binge Verse</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#trending">Trending</a></li>
+                <li class="dropdown">
+                    <a href="#">Shows</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="anime.html">Anime</a></li>
+                        <li><a href="webseries.html">Webseries</a></li>
+                        <li><a href="movie.html">Movies</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">My List</a></li>
+                <li><a href="#">Watchparty</a></li> <!-- Added Watchparty link -->
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search-button">Search</button>
+            <ul id="search-results" class="search-results"></ul> <!-- Search results list -->
+        </div>
+        <div class="profile-container">
+            <a href="profile.html" class="profile-link">
+                <img src="images/profile-icon.png" alt="Profile Icon" class="profile-icon">
+            </a>
+        </div>
+    </header>
+    <div class="results-container">
+        <h1>Search Results</h1>
+        <ul id="results-list" class="results-grid"></ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('query');
+            const resultsList = document.getElementById('results-list');
+
+            const items = [
+                { title: "Avengers Endgame", link: "https://example.com/avengers-endgame", image: "images/banner/banner1.jpeg"},
+                { title: "Chichhore", link: "https://example.com/chichhore", image: "images/banner/banner2.jpeg" },
+                { title: "Oppenheimer", link: "movie4.html", image: "images/banner/banner3.jpeg" },
+                { title: "Interstellar", link: "movie2.html", image: "images/banner/banner4.jpeg" },
+                { title: "Spiderman No Way Home", link: "movie1.html", image: "images/banner/banner5.jpeg" },
+                { title: "Batman V Superman", link: "https://example.com/batman-v-superman", image: "images/banner/banner6.jpeg" },
+                { title: "La La Land", link: "https://example.com/avengers-endgame", image: "images/banner/banner7.jpeg" },
+                { title: "The Dark Knight", link: "https://example.com/chichhore", image: "images/banner/banner8.jpeg" },
+                { title: "Robot 2.0", link: "movie4.html", image: "images/banner/banner9.jpeg" },
+                { title: "Zindagi Na Milegi Dobara", link: "https://example.com/avengers-endgame", image: "images/banner/banner10.jpeg" },
+                { title: "Martian", link: "https://example.com/chichhore", image: "images/banner/banner11.jpeg" },
+                { title: "Ludo", link: "movie4.html", image: "images/banner/banner12.jpeg" },
+                // Add more items
+            ];
+
+            if (query) {
+                const firstLetter = query.charAt(0).toUpperCase();
+                const filteredItems = items.filter(item => item.title.startsWith(firstLetter) && item.title.toLowerCase().includes(query.toLowerCase()));
+
+                if (filteredItems.length > 0) {
+                    filteredItems.forEach(item => {
+                        const listItem = document.createElement('li');
+                        const link = document.createElement('a');
+                        link.href = item.link;
+
+                        const img = document.createElement('img');
+                        img.src = item.image;
+                        img.alt = item.title;
+                        img.className = 'thumbnail';
+
+                        const title = document.createElement('div');
+                        title.className = 'item-title';
+                        title.textContent = item.title;
+
+                        link.appendChild(img);
+                        link.appendChild(title);
+                        listItem.appendChild(link);
+                        resultsList.appendChild(listItem);
+                    });
+                } else {
+                    resultsList.innerHTML = '<p class="no-results">No results found</p>';
+                }
+            } else {
+                resultsList.innerHTML = '<p class="no-results">No query provided</p>';
+            }
+        });
+    </script>
+    <footer>
+        <p>© 2024 Binge Verse. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime</title>
+    <link rel="stylesheet" href="search-results.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="caraouseled.css">
+    <script src="movie.js"></script>
+</head>
+<body>
+    <header>
+            <div class="logo">Binge Verse</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#trending">Trending</a></li>
+                    <li class="dropdown">
+                        <a href="#">Shows</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="anime.html">Anime</a></li>
+                            <li><a href="webseries.html">Webseries</a></li>
+                            <li><a href="movie.html">Movies</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">My List</a></li>
+                    <li><a href="#">Watchparty</a></li> <!-- Added Watchparty link -->
+                </ul>
+            </nav>    
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search...">
+                <button id="search-button">Search</button>
+                <ul id="search-results" class="search-results"></ul> <!-- Search results list -->
+            </div>        
+            <div class="profile-container">
+                <a href="profile.html" class="profile-link">
+                    <img src="./images/profile-icon.png" alt="Profile Icon" class="profile-icon">
+                </a>
+            </div>
+    </header>
+    <div class="results-container">
+        <h1>Anime</h1>
+        <ul id="results-list" class="results-grid"></ul>
+    </div>
+    <section id="carousel" class="carousel">
+        <div class="carousel-images">
+            <a href="https://example.com/avengers-endgame" class="carousel-slide">
+                <img src="./images/caraousel13.jpg" alt="Your Name">
+                <p class="carousel-caption">Your Name</p>
+            </a>
+            <a href="https://example.com/avengers-endgame" class="carousel-slide">
+                <img src="./images/carousel14.jpg" alt="classroom of the elite s01">
+                <p class="carousel-caption">classroom of the elite s01</p>
+            </a>
+            <a href="https://example.com/avengers-endgame" class="carousel-slide">
+                <img src="./images/caraousel15.jpg" alt="classroom of the elite s02">
+                <p class="carousel-caption">classroom of the elite s02</p>
+            </a>
+            <a href="https://example.com/avengers-endgame" class="carousel-slide">
+                <img src="./images/caraousel18.jpg" alt="Spirited Away">
+                <p class="carousel-caption">Spirited Away</p>
+            </a>
+            <a href="https://example.com/avengers-endgame" class="carousel-slide">
+                <img src="./images/caraousel17.jpg" alt="One Piece Film Red">
+                <p class="carousel-caption">One Piece Film Red</p>
+            </a>
+            <a href="https://example.com/avengers-endgame" class="carousel-slide">
+                <img src="./images/caraousel16.jpg" alt="Weathering with You">
+                <p class="carousel-caption">Weathering with You</p>
+            </a>
+        </div>
+    </section>
+    <footer>
+        <p>© 2024 Binge Verse. All rights reserved.</p>
+    </footer>
+</body>
+</html>
