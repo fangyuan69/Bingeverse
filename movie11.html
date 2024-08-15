@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watch2Gether Room</title>
+    <title>Binge Verse</title>
+    <link rel="stylesheet" href="movie.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="search-results.css">
-    <script src="movie.css"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="server.js"></script>
+    <script src="movie.js"></script>
 </head>
 <body>
     <header>
@@ -22,13 +20,13 @@
                     <ul class="dropdown-menu">
                         <li><a href="anime.html">Anime</a></li>
                         <li><a href="webseries.html">Webseries</a></li>
-                        <li><a href="movies.html">Movies</a></li>
+                        <li><a href="movie.html">Movies</a></li>
                     </ul>
                 </li>
                 <li><a href="#">My List</a></li>
-                <li><a href="#">Watchparty</a></li>
+                <li><a href="#">Watchparty</a></li> <!-- Added Watchparty link -->
             </ul>
-        </nav>
+        </nav>      
         <div class="search-container">
             <input type="text" id="search-input" placeholder="Search...">
             <button id="search-button">Search</button>
@@ -40,16 +38,23 @@
             </a>
         </div>
     </header>
-    <main>
-        <div id="video-player">
-            <video id="video" controls></video>
+
+    <section class="video-player">
+        <div class="video-container">
+            <div id="cincopa_212601914" >...</div><script type="text/javascript">
+                var cpo = []; cpo["_object"] ="cincopa_212601914"; cpo["_fid"] = "A4HAcLOLOO68!AkCDGy6nM8jO";
+                var _cpmp = _cpmp || []; _cpmp.push(cpo);
+                (function() { var cp = document.createElement("script"); cp.type = "text/javascript";
+                cp.async = true; cp.src = "https://rtcdn.cincopa.com/libasync.js";
+                var c = document.getElementsByTagName("script")[0];c.parentNode.insertBefore(cp, c); })(); </script>
         </div>
-        <div id="chat">
-            <ul id="messages"></ul>
-            <input id="message-input" type="text" placeholder="Type a message...">
-            <button id="send-message">Send</button>
+        <div class="video-details">
+            <h2>La La Land</h2>
+            <p>Description of the movie goes here.</p>
+            <a href="https://drive.usercontent.google.com/download?id=1lzqwxEubEvUTVPjAnulI3dMJ4PjpB9b7&export=download&authuser=0" class="download-button" download>Download</a>
         </div>
-    </main>
+    </section>
+
     <footer>
         <p>© 2024 Binge Verse. All rights reserved.</p>
     </footer>
