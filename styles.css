@@ -577,3 +577,25 @@ nav ul li a[href="#watchparty"]:hover {
 #cincopa_212601914{
   height: 500px;
 }
+
+@media only screen and (max-width: 768px) {
+  .carousel-slide {
+      flex: 1 1 calc(50% - 10px); /* Two slides per row on tablets */
+  }
+  .carousel-slide img {
+      height: 200px; /* Reduce image height */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .carousel-slide {
+      flex: 1 1 calc(100% - 10px); /* One slide per row on phones */
+  }
+  .carousel-slide img {
+      height: 150px; /* Further reduce image height */
+  }
+  input[type="text"], button {
+    font-size: 18px;
+    padding: 10px;
+  }  
+}

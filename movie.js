@@ -118,3 +118,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+const carousel = document.querySelector('.carousel-images');
+let startX, scrollLeft;
+
+carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].pageX;
+    scrollLeft = carousel.scrollLeft;
+});
+
+carousel.addEventListener('touchmove', (e) => {
+    const x = e.touches[0].pageX - startX;
+    carousel.scrollLeft = scrollLeft - x;
+});

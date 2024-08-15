@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Player</title>
     <link rel="stylesheet" href="movie.css">
+    <link rel="stylesheet" href="video-player.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -13,23 +16,63 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#trending">Trending</a></li>
-                <li><a href="#">Genres</a></li>
+                <li class="dropdown">
+                    <a href="#">Shows</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="anime.html">Anime</a></li>
+                        <li><a href="webseries.html">Webseries</a></li>
+                        <li><a href="movie.html">Movies</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">My List</a></li>
+                <li><a href="watch2gether.html">Watchparty</a></li> <!-- Added Watchparty link -->
             </ul>
-        </nav>
+        </nav>        
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search-button">Search</button>
+            <ul id="search-results" class="search-results"></ul> <!-- Search results list -->
+        </div>        
+        <div class="profile-container">
+            <a href="profile.html" class="profile-link">
+                <img src="./images/profile-icon.png" alt="Profile Icon" class="profile-icon">
+            </a>
+        </div>
     </header>
 
     <section class="video-player">
         <div class="video-container">
-            <iframe width="640" height="360" scrolling="no" frameborder="0" style="border: none;" src="https://www.bitchute.com/embed/BgRtYtZECREy/"></iframe>
+            <video id="videoPlayer" preload="metadata">
+                <source src="https://seed177.bitchute.com/1duObClNjgjC/BgRtYtZECREy.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="controls">
+                <div class="button-group">
+                    <button id="playPauseBtn"><i class="fa fa-play"></i></button>
+                    <button id="rewindBtn"><i class="fa fa-backward"></i></button>
+                    <button id="fastForwardBtn"><i class="fa fa-forward"></i></button>
+                    <button id="stopBtn"><i class="fa fa-stop"></i></button>
+                    <button id="muteUnmuteBtn"><i class="fa fa-volume-up"></i></button>
+                    <button id="fullscreenBtn"><i class="fa fa-expand"></i></button>
+                </div>
+                <div class="timeline">
+                    <input type="range" id="progressBar" value="0" min="0" max="100" step="0.1">
+                    <div class="current-time">0:00</div>
+                    <div class="duration">0:00</div>
+                </div>
+                <div class="additional-controls">
+                    <button id="speedBtn"><i class="fa fa-tachometer-alt"></i> Speed</button>
+                    <button id="qualityBtn"><i class="fa fa-cog"></i> Quality</button>
+                    <button id="captionsBtn"><i class="fa fa-closed-captioning"></i> Captions</button>
+                </div>
+            </div>
         </div>
         <div class="video-details">
             <h2>Interstellar</h2>
-            <p>In the near future, Earth faces an impending catastrophe: a devastating crop blight and severe dust storms render the planet uninhabitable. Humanity’s survival depends on finding a new home. NASA, led by Professor Brand, embarks on a daring mission to explore the galaxy through a newly discovered wormhole.s</p>
-            <a href="https://drive.usercontent.google.com/download?id=1GJ3oiAY8gwJ0buZ8iRUukGKRWz3o9YuH&export=download&authuser=0" class="download-button" download>Download</a>
+            <p>In the near future, Earth faces an impending catastrophe: a devastating crop blight and severe dust storms render the planet uninhabitable. Humanity’s survival depends on finding a new home. NASA, led by Professor Brand, embarks on a daring mission to explore the galaxy through a newly discovered wormhole.</p>
         </div>
     </section>
-
+    <script src="video-player.js"></script>
     <footer>
         <p>© 2024 Binge Verse. All rights reserved.</p>
     </footer>

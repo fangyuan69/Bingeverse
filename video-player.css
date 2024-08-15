@@ -1,33 +1,220 @@
-/* Video Player Styles */
-.featured-movie {
-    background-color: #222; /* Dark background for contrast */
-    padding: 2rem;
-    margin: 2rem auto;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.featured-movie h2 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    color: #fff;
-}
 
 .video-container {
     position: relative;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    width:100%;
+    max-width: 1100px;
     background-color: #000;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
 }
 
 video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.controls {
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    transition: opacity 0.3s;
+}
+
+.controls.hidden {
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction with hidden controls */
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-group button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.button-group button:hover {
+    color: #ddd;
+}
+
+.button-group button:active {
+    transform: scale(0.95);
+}
+
+.timeline {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#progressBar {
+    width: 100%;
+    background: #333;
+    height: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#progressBar::-webkit-slider-thumb {
+    background: #ff0000;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+#progressBar::-moz-range-thumb {
+    background: #ff0000;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.current-time, .duration {
+    font-size: 14px;
+    color: #ccc;
+    margin: 0 8px;
+}
+
+.additional-controls {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+
+.additional-controls button {
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.additional-controls button:hover {
+    background: #555;
+    border-color: #666;
+}
+
+.additional-controls button:active {
+    transform: scale(0.95);
+}
+
+/* Fullscreen styles */
+:fullscreen .video-container,
+:-webkit-full-screen .video-container,
+:-moz-full-screen .video-container,
+:-ms-fullscreen .video-container {
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+:fullscreen .controls,
+:-webkit-full-screen .controls,
+:-moz-full-screen .controls,
+:-ms-fullscreen .controls {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+:fullscreen video,
+:-webkit-full-screen video,
+:-moz-full-screen video,
+:-ms-fullscreen video {
     width: 100%;
     height: 100%;
-    border-radius: 8px;
+}
+
+:fullscreen video::-webkit-media-controls,
+:-webkit-full-screen video::-webkit-media-controls {
+    display: none !important;
+}
+/* Add this to your CSS file */
+.volume-control {
+    position: absolute;
+    bottom: 50px; /* Position this element above the controls */
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    font-size: 14px;
+    transition: opacity 0.3s;
+}
+
+.volume-control.show {
+    display: block;
+}
+/* Add this to your CSS file */
+.timeline {
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.timeline input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+    background: #333;
+    height: 5px;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.timeline input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #fff;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.timeline input[type="range"]::-moz-range-thumb {
+    background: #fff;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.timeline .current-time,
+.timeline .duration {
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    top: -20px;
+}
+
+.timeline .current-time {
+    left: 0;
+}
+
+.timeline .duration {
+    right: 0;
 }
